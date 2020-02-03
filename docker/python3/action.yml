@@ -1,0 +1,7 @@
+name: 'Python3 container test'
+description: 'Container action'
+author: 'mswarm'
+
+runs:
+  using: docker
+  image: Dockerfile
