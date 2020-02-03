@@ -1,0 +1,6 @@
+# action.yml
+name: 'python-alpine'
+description: 'Docker based images'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

@@ -28,7 +28,7 @@ jobs:
 
   _dockerbased_job:
     name: Docker based step
-    runs-on: ubuntu-latest
+    uses: ./docker/python3-alpine
     steps:
       - name: python
         run: |
