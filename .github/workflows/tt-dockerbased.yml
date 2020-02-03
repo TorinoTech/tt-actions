@@ -1,17 +1,31 @@
-name: CI
+name: TorinoTech-Action
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+      - dev/**
+  pull_request:
+    branches:
+      - master
 
 jobs:
-  build:
-
+  _githubbased_job:
+    name: GitHub based step
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+      - name: HI TorinoTeck
+        env:
+          - WHO: TorinoTech
+        run: |
+          echo hello
+          echo $WHO
+      - name: path using python
+        run: |
+          import os
+          print(os.environ['PATH'])
+        shell: python
+
+  _dockerbased_job:
+    name: Docker based step
+    container: python:3.7-alpine3.10
