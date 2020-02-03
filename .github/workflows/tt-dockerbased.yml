@@ -28,6 +28,7 @@ jobs:
 
   _dockerbased_job:
     name: Docker based step
+    runs-on: ubuntu-latest
     steps:
       - name: python
         run: |
