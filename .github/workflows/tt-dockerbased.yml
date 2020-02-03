@@ -29,3 +29,7 @@ jobs:
   _dockerbased_job:
     name: Docker based step
     container: python:3.7-alpine3.10
+    steps:
+      - name: python
+        run: |
+          python3 -c "import sys; print(sys.executable)"
