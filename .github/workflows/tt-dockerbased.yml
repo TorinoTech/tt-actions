@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: HI TorinoTeck
         env:
-          - WHO: TorinoTech
+          WHO: TorinoTech
         run: |
           echo hello
           echo $WHO
