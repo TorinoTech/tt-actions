@@ -28,8 +28,10 @@ jobs:
 
   _dockerbased_job:
     name: Docker based step
-    uses: ./docker/python3-alpine
+    runs-on: ubuntu-latest
     steps:
+      - name: python docker
+        uses: ./docker/python3-alpine
       - name: python
         run: |
           python3 -c "import sys; print(sys.executable)"
