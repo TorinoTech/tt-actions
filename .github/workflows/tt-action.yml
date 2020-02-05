@@ -25,7 +25,7 @@ jobs:
         echo "WORKING PROGRESS"
         python -c "import sys; print(sys.executable)"
     - name: Debug
-      if: $DEBUG == true
+      if: ${{job.env.DEBUG}} == true
       run: |
         pwd
         ls
