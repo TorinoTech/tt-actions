@@ -1,1 +1,1 @@
-print("Docker is awesome")
+print("Pipeline is awesome")

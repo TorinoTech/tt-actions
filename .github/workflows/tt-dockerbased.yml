@@ -10,6 +10,7 @@ on:
       - master
 
 jobs:
+  name: tt-action
   _githubbased_job:
     runs-on: ubuntu-latest
     steps:
