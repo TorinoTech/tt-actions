@@ -10,7 +10,7 @@ on:
       - master
 
 jobs:
-  _githubbased_job:
+  _Github:
     runs-on: ubuntu-latest
     env:
       DEBUG: true
@@ -29,7 +29,7 @@ jobs:
         pwd
         ls
 
-  _dockerbased_job:
+  _Docker:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
