@@ -25,7 +25,7 @@ jobs:
         echo "WORKING PROGRESS"
         python -c "import sys; print(sys.executable)"
     - name: Debug
-      if: env.DEBUG == true
+      if: DEBUG == true
       run: |
         pwd
         ls
