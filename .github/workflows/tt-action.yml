@@ -21,9 +21,8 @@ jobs:
       with:
         python-version: '3.7'
     - name: Script executions
-      run: |
-        echo "WORKING PROGRESS"
-        python -c "import sys; print(sys.executable)"
+      if: env.DEBUG
+      run: python -c "import sys; print(sys.executable)"
     - name: Debug
       if: env.DEBUG
       run: |
