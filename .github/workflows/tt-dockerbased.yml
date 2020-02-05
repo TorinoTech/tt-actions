@@ -13,13 +13,12 @@ jobs:
   _githubbased_job:
     runs-on: ubuntu-latest
     steps:
-    - name: Python action setyp
       uses: actions/checkout@v2
-    - name:
+    - name: Python action setup
       uses: actions/setup-python@v1
       with:
         python-version: '3.7'
-    - name: Executions
+    - name: Script executions
       run: |
         echo "WORKING PROGRESS"
         python -c "import sys; print(sys.executable)"
