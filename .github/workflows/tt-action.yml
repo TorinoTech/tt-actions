@@ -29,3 +29,5 @@ jobs:
       run: |
         pwd
         ls
+  _dockerbase_job:
+    container: python:3.7-alpine
