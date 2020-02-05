@@ -1,0 +1,37 @@
+name: TorinoTech-Action
+
+on:
+  push:
+    branches:
+      - master
+      - dev/**
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  _Github:
+    runs-on: ubuntu-latest
+    env:
+      DEBUG: true
+    steps:
+    - uses: actions/checkout@v2
+    - name: SETUP-Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.7'
+    - name: DBG-Executions
+      if: env.DEBUG
+      run: python -c "import sys; print(sys.executable)"
+    - name: DBG-System
+      if: env.DEBUG
+      run: |
+        pwd
+        ls
+
+  _Docker:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: SETUP-Docker
+      uses: ./docker/python3
