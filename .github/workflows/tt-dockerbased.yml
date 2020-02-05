@@ -19,6 +19,8 @@ jobs:
       with:
         python-version: '3.7'
     - name: Script executions
+      run: python app.py
+    - name: Script executions
       run: |
         echo "WORKING PROGRESS"
         python -c "import sys; print(sys.executable)"
