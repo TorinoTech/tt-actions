@@ -30,6 +30,4 @@ jobs:
         pwd
         ls
   _dockerbase_job:
-    runs-on: ubuntu-latest
-    my_job:
-      container: node:10.16-jessie
+    container: python:3.7-alpine
