@@ -12,6 +12,8 @@ on:
 jobs:
   _githubbased_job:
     runs-on: ubuntu-latest
+    env:
+      DEBUG: true
     steps:
     - uses: actions/checkout@v2
     - name: Python action setup
@@ -20,9 +22,10 @@ jobs:
         python-version: '3.7'
     - name: Script executions
       run: |
-        pwd
-        ls
-    - name: Script executions
-      run: |
         echo "WORKING PROGRESS"
         python -c "import sys; print(sys.executable)"
+    - name: Debug
+      if: $DEBUG == true
+      run: |
+        pwd
+        ls
