@@ -14,26 +14,8 @@ jobs:
     name: GitHub based step
     runs-on: ubuntu-latest
     steps:
-      - name: HI TorinoTeck
-        env:
-          WHO: TorinoTech
-        run: |
-          echo hello
-          echo $WHO
-      - name: path using python
-        run: |
-          import os
-          print(os.environ['PATH'])
-        shell: python
-
-  _dockerbased_job:
-    name: Docker based step
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: python docker
-        uses: ./docker/python3-alpine
-      - name: python
-        run: |
-          python3 -c "import sys; print(sys.executable)"
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v1
+      with:
+        python-version: '3.7'
+    - run: python -c "import sys; print(sys.executable)"
