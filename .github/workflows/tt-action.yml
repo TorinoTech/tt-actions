@@ -16,14 +16,14 @@ jobs:
       DEBUG: true
     steps:
     - uses: actions/checkout@v2
-    - name: Python action setup
+    - name: SETUP-Python
       uses: actions/setup-python@v1
       with:
         python-version: '3.7'
-    - name: Script executions
+    - name: DBG-Executions
       if: env.DEBUG
       run: python -c "import sys; print(sys.executable)"
-    - name: Debug
+    - name: DBG-System
       if: env.DEBUG
       run: |
         pwd
@@ -33,5 +33,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Test Docker
+    - name: SETUP-Docker
       uses: ./docker/python3
